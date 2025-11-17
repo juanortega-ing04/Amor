@@ -1,0 +1,423 @@
+/* ===== Paleta de colores ===== */
+:root {
+  --color-bg: #f5e6d3;          /* beige de fondo */
+  --color-card: #fff4e6;        /* beige muy claro */
+  --color-card-strong: #e0c9a6; /* beige más intenso */
+  --color-primary: #111111;     /* negro principal */
+  --color-secondary: #2b2b2b;   /* negro grisáceo */
+  --color-accent: #c96a4a;      /* terracota (botones / selección) */
+  --color-border-soft: #d7a86e; /* dorado apagado */
+  --color-muted: #bfb8af;       /* gris/beige para texto secundario */
+
+  --font-script: "Pinyon Script", cursive;
+  --font-body: "Quicksand", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+/* ------- Estilos generales ------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-primary);
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-label {
+  font-size: 14px;
+  text-align: right;
+  padding: 8px 16px 16px;
+  color: var(--color-secondary);
+}
+
+/* Texto en Pinyon Script */
+.script-title {
+  font-family: var(--font-script);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+/* ===================== NAVBAR (todas las páginas) ===================== */
+
+.topbar {
+  background: var(--color-card-strong);
+  border-bottom: 2px solid var(--color-border-soft);
+}
+
+.topbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nav-logo {
+  font-size: clamp(24px, 3.2vw, 34px);
+  color: var(--color-primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-primary);
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+  background: var(--color-bg);
+  color: var(--color-secondary);
+}
+
+/* ------- Ícono / imagen genérica ------- */
+.image-icon {
+  display: block;
+  width: 320px;
+  max-width: 70vw;
+}
+
+/* solo afecta al SVG de index, no a las <img> */
+.image-icon rect,
+.image-icon circle,
+.image-icon polyline {
+  stroke: var(--color-primary);
+}
+
+/* ===================== index.html ===================== */
+.index-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 24px 32px;
+  background: var(--color-card);
+  border-radius: 30px;
+  border: 2px solid var(--color-border-soft);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.index-card-link:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
+}
+
+.index-title {
+  font-family: var(--font-body);
+  font-size: 24px;  /* misma familia que el resto */
+  font-weight: 700;               /* negrita para destacar */
+  letter-spacing: 0.03em;         /* un poquito más espaciada */
+  text-align: center;
+}
+
+.index-subtitle {
+  font-size: 12px;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+/* ===================== pag2.html (Razones) ===================== */
+
+.pag2-main {
+  flex: 1;
+  padding: 48px 24px 24px;
+}
+
+/* Contenedor de todas las razones */
+.reasons-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 60px;          /* espacio entre tarjetas */
+  justify-content: center;
+}
+
+/* Cada razón es una tarjeta vertical */
+.reason {
+  width: 320px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Botón y panel ocupan todo el ancho de la tarjeta */
+.reason .accordion-btn,
+.reason .accordion-panel {
+  width: 100%;
+}
+
+/* Botón de cada razón (TÍTULO DE LA TARJETA) */
+.accordion-btn {
+  background: var(--color-card-strong);
+  padding: 18px 60px;
+  font-size: 22px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  color: var(--color-primary);
+
+  /* >>> AQUÍ el cambio de fuente: similar a los títulos pero en bold <<< */
+  font-family: var(--font-body);  /* misma familia que el resto */
+  font-weight: 700;               /* negrita para destacar */
+  letter-spacing: 0.03em;         /* un poquito más espaciada */
+  text-align: center;
+
+  transition: background 0.2s ease, color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.accordion-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-card);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Panel de texto de cada razón */
+.accordion-panel {
+  background: var(--color-card);
+  padding: 16px 24px;
+  font-size: 18px;
+  display: none;
+  border: 1px solid var(--color-border-soft);
+  border-top: none;
+  color: var(--color-secondary);
+  box-sizing: border-box;
+  font-weight: 400;               /* texto normal, para que contraste */
+}
+
+/* Botón resaltado cuando la razón está abierta */
+.reason.open .accordion-btn {
+  background: var(--color-accent);
+  color: var(--color-card);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================== pag3.html (Fotos) ===================== */
+
+.pag3-main {
+  flex: 1;
+  padding: 40px 40px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+/* Tarjetas de fotos (desktop) */
+.image-card {
+  padding: 10px;
+  background: var(--color-card);
+  border-radius: 24px;
+  border: 2px solid var(--color-border-soft);
+  overflow: hidden;                  /* recorta la foto dentro del marco */
+  width: 260px;                      /* tamaño de la tarjeta */
+  height: 360px;
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease,
+              border-color 0.25s ease;
+}
+
+/* rotaciones para el efecto “regadas” (desktop) */
+.image-card:nth-child(1) { transform: rotate(-13deg); }
+.image-card:nth-child(2) { transform: rotate(9deg); }
+.image-card:nth-child(3) { transform: rotate(-5deg); }
+.image-card:nth-child(4) { transform: rotate(7deg); }
+.image-card:nth-child(5) { transform: rotate(-8deg); }
+.image-card:nth-child(6) { transform: rotate(4deg); }
+
+.image-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen dentro de la tarjeta (pag3) */
+.image-card .image-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* recorta sin deformar la foto */
+  display: block;
+}
+
+/* ===================================================== */
+/*                 MEDIA QUERIES RESPONSIVE              */
+/* ===================================================== */
+
+/* ===== Tablets y pantallas medianas (<= 900px) ===== */
+@media (max-width: 900px) {
+  .topbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  /* index */
+  .main-center {
+    padding: 32px 16px;
+  }
+
+  .index-card-link {
+    width: 80vw;
+    max-width: 400px;
+  }
+
+  /* pag2 */
+  .pag2-main {
+    padding: 32px 16px 16px;
+  }
+
+  .reasons-container {
+    gap: 32px 32px;
+  }
+
+  .reason {
+    width: 280px;
+    max-width: 85vw;
+  }
+}
+
+/* ===== Móviles (<= 768px) ===== */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .topbar-inner {
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: 4px 10px;
+    font-size: 14px;
+  }
+
+  /* index más compacto */
+  .index-title {
+    font-size: 26px;
+  }
+
+  .index-card-link {
+    padding: 18px 20px;
+    border-radius: 24px;
+  }
+
+  /* pag2: razones más anchas */
+  .reasons-container {
+    margin: 24px auto;
+    gap: 24px;
+  }
+
+  .reason {
+    width: 85vw;
+    max-width: 420px;
+  }
+
+  .accordion-btn {
+    font-size: 18px;
+    padding: 14px 20px;
+  }
+
+  .accordion-panel {
+    font-size: 16px;
+    padding: 12px 18px;
+  }
+
+  /* pag3: tarjetas adaptadas a móvil */
+  .pag3-main {
+    padding: 24px 12px 16px;
+  }
+
+  .gallery {
+    gap: 20px;
+  }
+
+  .image-card {
+    width: 75vw;    /* ancho relativo a la pantalla */
+    height: 95vw;   /* un poco más alta para formato foto */
+  }
+
+  /* en móvil las dejamos rectas para que no se salgan */
+  .image-card:nth-child(1),
+  .image-card:nth-child(2),
+  .image-card:nth-child(3),
+  .image-card:nth-child(4),
+  .image-card:nth-child(5),
+  .image-card:nth-child(6) {
+    transform: rotate(0deg);
+  }
+}
+
+/* ===== Móviles muy pequeños (<= 480px) ===== */
+@media (max-width: 480px) {
+  .nav-logo {
+    font-size: 22px;
+  }
+
+  .index-title {
+    font-size: 22px;
+  }
+
+  .accordion-btn {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+
+  .accordion-panel {
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+
+  .file-label {
+    font-size: 12px;
+    padding: 4px 10px 10px;
+  }
+}

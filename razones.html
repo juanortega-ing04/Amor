@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Razones</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Quicksand:wght@400;500;600&display=swap"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page">
+        <header class="topbar">
+      <div class="topbar-inner">
+        <div class="nav-logo script-title">
+          Razones por las que me gusta estar contigo
+        </div>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Inicio</a>
+          <a href="inicios.html" class="nav-link">Fotos</a>
+        </nav>
+      </div>
+    </header>
+
+<main class="pag2-main">
+  <div class="reasons-container">
+    
+        <div class="reason">
+      <button class="accordion-btn">Razón 1</button>
+      <div class="accordion-panel">
+        Eres una mujer Hermosa.
+      </div>
+    </div>
+        <div class="reason">
+      <button class="accordion-btn">Razón 2</button>
+      <div class="accordion-panel">
+        Eres una mujer maravillosa.
+      </div>
+    </div>
+        <div class="reason">
+      <button class="accordion-btn">Razón 3</button>
+      <div class="accordion-panel">
+        Eres una mujer increible y de admirar.
+      </div>
+    </div>
+        <div class="reason">
+      <button class="accordion-btn">Razón 4</button>
+      <div class="accordion-panel">
+        Tu pelo combina con mi barba.
+      </div>
+    </div>
+        <div class="reason">
+      <button class="accordion-btn">Razón 5</button>
+      <div class="accordion-panel">
+        Tu forma de ser irradia donde llegas.
+      </div>
+    </div>
+    <div class="reason">
+      <button class="accordion-btn">Razón 6</button>
+      <div class="accordion-panel">
+        Eres una persona muy amorosa.
+      </div>
+    </div>
+
+    <div class="reason">
+      <button class="accordion-btn">Razón 7</button>
+      <div class="accordion-panel">
+        Siempre me haces reír.
+      </div>
+    </div>
+
+    <div class="reason">
+      <button class="accordion-btn">Razón 8</button>
+      <div class="accordion-panel">
+        Me apoyas en todo lo que hago.
+      </div>
+    </div>
+
+    <div class="reason">
+      <button class="accordion-btn">Razón 9</button>
+      <div class="accordion-panel">
+        Me escuchas y me entiendes.
+      </div>
+    </div>
+
+    <div class="reason">
+      <button class="accordion-btn">Razón 10</button>
+      <div class="accordion-panel">
+        Contigo todo es más bonito.
+      </div>
+    </div>
+        <div class="reason">
+      <button class="accordion-btn">Razón 11</button>
+      <div class="accordion-panel">
+        Contigo todo es más tranquilo.
+      </div>
+    </div>
+        <div class="reason">
+      <button class="accordion-btn">Razón 12</button>
+      <div class="accordion-panel">
+        Contigo puedo ser.
+      </div>
+    </div>
+    <div class="reason">
+      <button class="accordion-btn">Razón 13</button>
+      <div class="accordion-panel">
+        Eres mi reina.
+      </div>
+    </div>
+        <div class="reason">
+      <button class="accordion-btn">Razón 14</button>
+      <div class="accordion-panel">
+        Me encanta mimarte y cuidarte.
+      </div>
+    </div>
+        <div class="reason">
+      <button class="accordion-btn">Razón 15</button>
+      <div class="accordion-panel">
+        Estas para mi como yo estoy para ti.
+      </div>
+    </div>
+    <div class="reason">
+      <button class="accordion-btn">Razón 16</button>
+      <div class="accordion-panel">
+        Me encanta que disfrutes y vivas la vida como la vives.
+      </div>
+    </div>
+    <div class="reason">
+      <button class="accordion-btn">Razón 17</button>
+      <div class="accordion-panel">
+        Me encanta que seas corrinchera.
+      </div>
+    </div>
+    <div class="reason">
+      <button class="accordion-btn">Razón 18</button>
+      <div class="accordion-panel">
+        Me encanta que digas ra ra ra para todo.
+      </div>
+    </div>
+    <div class="reason">
+      <button class="accordion-btn">Razón 19</button>
+      <div class="accordion-panel">
+        Me encantan tus ojos expresivos.
+      </div>
+    </div>
+    <div class="reason">
+      <button class="accordion-btn">Razón 20</button>
+      <div class="accordion-panel">
+        Me encantan como tu nariz y ojos delatan muchas de las cosas que piensas.
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  const reasons = document.querySelectorAll(".reason");
+
+  reasons.forEach((reason) => {
+    const btn = reason.querySelector(".accordion-btn");
+    const panel = reason.querySelector(".accordion-panel");
+
+    btn.addEventListener("click", () => {
+      const isVisible = panel.style.display === "block";
+      panel.style.display = isVisible ? "none" : "block";
+      reason.classList.toggle("open", !isVisible); // para el estilo activo
+    });
+  });
+</script>
+
+  </body>
+</html>
